@@ -1,4 +1,5 @@
 const timerDisplay = document.getElementById("timer");
+const startButton = document.getElementById("startButton");
 const studyTime = 25 * 60; 
 const breakTime = 5 * 60; 
 
@@ -37,6 +38,7 @@ const updateTimerDisplay = () => {
 };
 
 const startPomodoro = () => {
+    startButton.disabled = true;
     if (isPaused) {
         isPaused = false;
     } else {
@@ -76,4 +78,5 @@ const startPomodoro = () => {
 const pause = () => {
     clearInterval(interval);
     isPaused = true;
+    startButton.disabled = false;
 };
